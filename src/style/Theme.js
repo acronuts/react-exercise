@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
         background: #FAFAFA;
         min-height: 100vh;
         height: 100%;
+        /* position: relative; */
         /* width: 90%; */
         /* margin: 0 auto; */
         color: rgba(0, 0, 0, 0.85)
@@ -21,5 +22,5 @@ export const GlobalStyle = createGlobalStyle`
 
 export const colors = {
     blue: '#6E81D5',
-    orange: '#EF7310'
+    ricardoOrange: '#EF7310'
 }

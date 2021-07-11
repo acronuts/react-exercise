@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
 import Header from '../components/Header';
+import ProductsContainer from './../components/ProductsContainer/index';
 
-const ProductPage = () => {
+const ProductPage = (props) => {
+  console.log('ProdProps', props)
+  const article = props.location.state;
   return (
     <Fragment>
         <Header />
-      <div>product here</div>
+      <ProductsContainer article={article} />
     </Fragment>
   );
 };

@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { Form } from '../style/Form';
-import SearchBox from './../components/SearchBox/index';
+import SearchContainer from '../components/SearchContainer/index';
 
 const Home = () => {
   return (
     <Fragment>
       <Header />
-      <SearchBox />
+      <SearchContainer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };

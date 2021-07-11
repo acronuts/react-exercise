@@ -11,6 +11,7 @@ export const Button = styled.button`
     font-size: 1.1rem;
     border: 1px solid ${colors.blue};
     border-radius: 4px;
+    overflow: hidden;
     /* text-align: center; */
     color: ${colors.blue};
     font-weight: 600;

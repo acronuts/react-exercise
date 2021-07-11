@@ -7,11 +7,11 @@ const Header = () => {
   return (
     <Fragment>
       <HeaderContainer>
-        <Link to='/'>
-          <LogoWrapper>
+        <LogoWrapper>
+          <Link to='/'>
             <Logo src={logo} alt='logo' />
-          </LogoWrapper>
-        </Link>
+          </Link>
+        </LogoWrapper>
       </HeaderContainer>
     </Fragment>
   );
