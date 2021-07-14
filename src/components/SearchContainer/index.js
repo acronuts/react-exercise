@@ -1,55 +1,29 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Button } from '../../style/Button';
-import { Form, Input } from '../../style/Form';
-import { Label, SearchContainerWrapper, SearchPageContainer } from './styled';
+import { Form, Input, Label } from '../../style/Form';
+import { SearchContainerWrapper, SearchPageContainer, ErrorMessage } from './styled';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import Spinner from '../Spinner';
-
-const apikey = process.env.REACT_APP_API_TOKEN
-
-// console.log('apiToken', apikey)
 
 const SearchContainer = () => {
-  const [disabled, setDisabled] = useState(true);
   const [query, setQuery] = useState('');
-  // const [data, setData] = useState({});
-  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null);
+  const [showError, setShowError] = useState(false)
 
-  // console.log('initial data', data)
-  const history = useHistory()
-
-  // useEffect(() => {
-  //   const apiToken = 'd9948f958a74f0adc34faf3ae9526beb477471e5';
-  //   const url = `https://www.ricardo.ch/api/frontend/recruitment/search?apiToken=${apiToken}&searchText=${query}`;
-  //   const fetchData = async () => {
-  //     setIsLoading(true)
-  //     try {
-  //       const result = await axios(url)
-  //       setData(result.data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //     setIsLoading(false)
-  //   }
-  //   fetchData()
-  // }, [])
+  const history = useHistory();
 
   const searchHandler = e => {
     e.preventDefault();
-    setIsLoading(true)
-    // const apiToken = 'd9948f958a74f0adc34faf3ae9526beb477471e5';
-    const url = `https://www.ricardo.ch/api/frontend/recruitment/search?apiToken=${apikey}&searchText=${query}`;
+    const url = `https://www.ricardo.ch/api/frontend/recruitment/search?apiToken=${process.env.REACT_APP_API_TOKEN}&searchText=${query}`;
     axios
       .get(url)
       .then(response => {
-        // setData(response.data);
-        // console.log(data);
-        history.push(`/search/${query}`, response.data )
+        history.push(`/search/${query}`, response.data);
+        // setError(null)
       })
-      .catch(error => console.log(error.message));
-      setIsLoading(false)
+      .catch(err => setError(err));
   };
+
 
   return (
     <Fragment>
@@ -57,17 +31,25 @@ const SearchContainer = () => {
         <SearchContainerWrapper>
           <Form onSubmit={searchHandler}>
             <Label>Search text</Label>
-          <Input
-            type='search'
-            value={query}
-            onChange={e => setQuery(e.currentTarget.value)}
-            // onSubmit={searchHandler}
-            placeholder='Search for articles'></Input>
-          <Button type='submit'>
-            <i class='fas fa-search'></i>SEARCH
-          </Button>
+            <Input
+              type='search'
+              value={query}
+              onChange={e => setQuery(e.currentTarget.value)}
+              placeholder='Search for articles'></Input>
+            <Button type='submit' disabled={!query}>
+              <i className='fas fa-search'></i>
+              <span>SEARCH</span>
+            </Button>
           </Form>
-          {isLoading ? <Spinner/> : null}
+          {error ? (
+            <ErrorMessage>
+              <p>Oops. Something went wrong, please try again</p>
+              <Button onClick={() => setShowError(showError ? false : true)} >{showError ? 'Hide error' : 'Show error'}</Button>
+              <p>
+              {showError ? `Error: ${error.message}` : null}
+              </p>
+            </ErrorMessage>
+          ) : null}
         </SearchContainerWrapper>
       </SearchPageContainer>
     </Fragment>

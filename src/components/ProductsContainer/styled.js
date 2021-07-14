@@ -1,25 +1,44 @@
 import styled from 'styled-components';
-import { colors } from '../../style/Theme';
 
-export const ProductContianer = styled.section`
+export const ProductContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
-  /* border: 1px solid black; */
-  margin: 5% 5%;
+  margin: 3rem 5% 5% 5%;
+  justify-content: center;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
   }
 `;
 
+export const NoArticle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-bottom: 2rem;
+  }
+  @media screen and (max-width: 768px) {
+    img {
+      width: 75%;
+    }
+  }
+`;
+
+export const ProductHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 2% 5% 0 5%;
+`;
+
 export const ImageProductContainer = styled.img`
   width: 49%;
-  /* min-width: 500px; */
   height: 500px;
   margin-right: 2%;
   object-fit: contain;
   background-color: #fff;
   padding: 15px;
-  /* border: 1px solid red; */
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
@@ -28,13 +47,10 @@ export const ImageProductContainer = styled.img`
 export const ProductInfoContainer = styled.div`
   display: flex;
   width: 49%;
-  /* min-width: 500px; */
   padding: 20px;
   flex-direction: column;
-  /* justify-content: space-between; */
   overflow: hidden;
   background-color: #fff;
-  /* border: 1px solid green; */
   @media screen and (max-width: 1024px) {
     width: 100%;
     margin-top: 5%;
@@ -42,25 +58,45 @@ export const ProductInfoContainer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  padding: 0 0 2rem 0;
-  border-bottom: 2px solid #ccc;
-  /* border: 1px solid red; */
+  padding-bottom: 2rem;
+  position: relative;
+  ::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 90%;
+    padding: 2rem 0;
+    border-bottom: 3px solid #ccc;
+  }
+  h1 {
+    margin-bottom: 3px;
+  }
 `;
 
 export const SellerPriceContainer = styled.div`
-  /* display: flex; */
-  /* flex: 3; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  padding: 2rem 0;
-  border-bottom: 2px solid #ccc;
-  /* border: 1px solid green; */
+  padding: 1.6rem 0;
+  position: relative;
+  ::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    padding: 2.2rem 0;
+    border-bottom: 3px solid #ccc;
+  }
+  p {
+    margin-bottom: 5px
+  }
 `;
 
 export const DescriptionContainer = styled.div`
-  padding: 2rem 0;
-  ul li {
+  padding-top: 2.8rem;
+  li {
     margin-left: 2em;
   }
-  /* border: 1px solid purple; */
+  ul,
+  ol {
+    margin: 1rem 0;
+  }
 `;

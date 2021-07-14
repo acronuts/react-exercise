@@ -2,12 +2,16 @@ import React, { Fragment } from 'react';
 import Header from '../components/Header';
 import ProductsContainer from './../components/ProductsContainer/index';
 
-const ProductPage = (props) => {
-  console.log('ProdProps', props)
-  const article = props.location.state;
+const ProductPage = props => {
+  let article = props.location.state;
+
+  if (article === undefined) {
+    article = { articleId: props.match.params.articleId };
+  }
+
   return (
     <Fragment>
-        <Header />
+      <Header />
       <ProductsContainer article={article} />
     </Fragment>
   );

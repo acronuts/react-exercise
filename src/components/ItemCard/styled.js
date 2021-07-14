@@ -1,16 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// export const StyledLink = styled(Link)`
-//   /* display: flex; */
-//   text-decoration: none;
-//   color: #000;
-//   flex: 1;
-//   /* &:focus, &:hover, &:visited, &:link, &:active {
-//         text-decoration: none;
-//     } */
-// `;
-
 export const CardWrapper = styled(Link)`
   display: flex;
   flex-direction: column;

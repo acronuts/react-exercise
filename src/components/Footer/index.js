@@ -4,7 +4,9 @@ import { FooterContainer } from './styled';
 const Footer = () => {
   return (
     <FooterContainer>
-      <div>footer text</div>
+      <div>logo</div>
+      <div>links</div>
+      <div>social</div>
     </FooterContainer>
   );
 };

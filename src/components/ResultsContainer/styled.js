@@ -1,16 +1,62 @@
 import styled from 'styled-components';
+import { colors } from '../../style/Theme';
 
 export const ResultContainer = styled.section`
   display: flex;
-  margin: 4% 5% 0 5%;
-  flex-wrap: wrap;
-  /* justify-content: center; */
-  /* width: 90%; */
-  /* border: 1px solid black; */
+  margin: 0 2rem;
+  flex-direction: column;
+  padding: 30px 15px;
+  select {
+    width: 9rem;
+    height: 1.8rem;
+    color: ${colors.ricardoOrange};
+    font-size: 1rem;
+    border: none;
+    background-color: inherit;
+    outline: none;
+  }
+  label {
+    color: ${colors.ricardoOrange};
+    font-weight: 600;
+  }
+  option {
+    border-color: ${colors.ricardoOrange};
+  }
+`;
+
+export const ResultHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    margin-right: 2rem;
+  }
+  p {
+    margin-bottom: 2px;
+  }
 `;
 
 export const ItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  align-content: flex-start;
+  background-color: #fff;
+  margin: 3rem 2rem;
+  padding: 10px 15px;
+`;
+
+export const NoResultsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 3rem 5% 0 5%;
+  img {
+    min-width: 27.5%;
+  }
 `;

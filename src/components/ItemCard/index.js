@@ -1,10 +1,5 @@
 import React, { Fragment } from 'react';
-import {
-  CardWrapper,
-  ImageCardContainer,
-  InfoContainer,
-  StyledLink,
-} from './styled';
+import { CardWrapper, ImageCardContainer, InfoContainer } from './styled';
 
 const ItemCard = ({ item }) => {
   const link = `/article/${item.id}`;
@@ -16,29 +11,29 @@ const ItemCard = ({ item }) => {
 
   return (
     <Fragment>
-      {/* <StyledLink to={{ pathname: link, state: { articleId: item.id } }}> */}
-        <CardWrapper to={{ pathname: link, state: { articleId: item.id } }} >
-          <ImageCardContainer src={item.imageUrl} />
-          <InfoContainer>
-            <div>
-              <h3>{item.title}</h3>
-            </div>
-            <div>
-              <p>
-                Ending on:{' '}
-                <strong>
-                  {endDate} at {endTime}
-                </strong>
-              </p>
-            </div>
-            {item.buyNowPrice !== null ? (
-              <p style={{ fontSize: 18, fontWeight: 600 }}>{item.buyNowPrice.toFixed(2)} CHF</p>
-            ) : (
-              <div />
-            )}
-          </InfoContainer>
-        </CardWrapper>
-      {/* </StyledLink> */}
+      <CardWrapper to={{ pathname: link, state: { articleId: item.id } }}>
+        <ImageCardContainer src={item.imageUrl} />
+        <InfoContainer>
+          <div>
+            <h3>{item.title}</h3>
+          </div>
+          <div>
+            <p>
+              Ending on:{' '}
+              <strong>
+                {endDate}</strong> at <strong>{endTime}
+              </strong>
+            </p>
+          </div>
+          {item.buyNowPrice !== null ? (
+            <p style={{ fontSize: 18, fontWeight: 600 }}>
+              {item.buyNowPrice.toFixed(2)} CHF
+            </p>
+          ) : (
+            <div />
+          )}
+        </InfoContainer>
+      </CardWrapper>
     </Fragment>
   );
 };
