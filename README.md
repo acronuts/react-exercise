@@ -1,5 +1,9 @@
 # Ricardo React Exercise
 
+# Live Demo
+
+[demo](https://ricardo-react.herokuapp.com/)
+
 # Installation
 
 Clone repository:
@@ -36,6 +40,8 @@ Additional packages used:
 -   [axios](https://axios-http.com/)
 -   [styled components](https://styled-components.com/) 💅
 -   [react-router](https://reactrouter.com/web/guides/quick-start)
+
+Deployed with: [Heroku](https://www.heroku.com/)
 
 ## Learn More
 

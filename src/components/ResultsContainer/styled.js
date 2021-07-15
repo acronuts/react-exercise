@@ -35,9 +35,17 @@ export const ResultHeader = styled.div`
   p {
     margin-bottom: 2px;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 820px) {
     span:first-child {
       display: none;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    span:nth-child(2) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      width: 15rem;
+      height: 5rem;
     }
   }
 `;

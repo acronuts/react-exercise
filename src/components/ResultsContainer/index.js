@@ -91,13 +91,13 @@ const ResultsContainer = ({ data }) => {
           <ResultHeader>
             <div>
               <p>
-                Total results<span> found for "<strong>{query}</strong>"</span>: {data.totalCount}
+                Total results<span className='1st span'> found for "<strong>{query}</strong>"</span>: {data.totalCount}
               </p>{' '}
               {data.totalCount > 61 ? (
                 <p>Showing {results.length} results</p>
               ) : null}
             </div>
-            <span>
+            <span className='3rd span'>
               <SortDropdown />
               <Button
                 back

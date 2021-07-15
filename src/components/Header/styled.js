@@ -5,7 +5,7 @@ export const HeaderContainer = styled.section`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  height: 13vh;
+  height: 120px;
   width: 100%;
   @media screen and (max-width: 768px) {
     display: flex;
