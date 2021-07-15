@@ -19,16 +19,13 @@ export const ResultContainer = styled.section`
     color: ${colors.ricardoOrange};
     font-weight: 600;
   }
-  option {
-    border-color: ${colors.ricardoOrange};
-  }
 `;
 
 export const ResultHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  span {
+  span:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,6 +34,11 @@ export const ResultHeader = styled.div`
   }
   p {
     margin-bottom: 2px;
+  }
+  @media screen and (max-width: 800px) {
+    span:first-child {
+      display: none;
+    }
   }
 `;
 

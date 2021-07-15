@@ -24,8 +24,6 @@ const ResultsContainer = ({ data }) => {
     setResults(data);
   }, [data]);
 
-  console.log(data)
-
   const SortDropdown = () => {
     return (
       <label>
@@ -93,10 +91,10 @@ const ResultsContainer = ({ data }) => {
           <ResultHeader>
             <div>
               <p>
-                Total results found for "<strong>{query}</strong>": {data.totalCount}
+                Total results<span> found for "<strong>{query}</strong>"</span>: {data.totalCount}
               </p>{' '}
               {data.totalCount > 61 ? (
-                <p>Showing {data.articles.length} results</p>
+                <p>Showing {results.length} results</p>
               ) : null}
             </div>
             <span>
